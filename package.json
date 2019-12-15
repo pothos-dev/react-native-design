@@ -1,0 +1,16 @@
+{
+  "name": "@bearbytes/react-native-design",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react-native": "^0.60.25"
+  }
+}
