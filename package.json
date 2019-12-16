@@ -6,11 +6,17 @@
   "files": [
     "src"
   ],
-  "scripts": {},
+  "scripts": {
+    "local": "npm pack && cd ../tripmemory && npm i ../react-native-design/bearbytes-react-native-design-0.0.1.tgz && rm ../react-native-design/bearbytes-react-native-design-0.0.1.tgz"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-native": "^0.61.5"
+  },
   "devDependencies": {
+    "@types/react": "^16.9.16",
     "@types/react-native": "^0.60.25"
   }
 }
