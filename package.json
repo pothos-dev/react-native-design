@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "copy": "cp -r src/* ../tripmemory/node_modules/@bearbytes/react-native-design/src",
-    "pack": "npm pack && cd ../tripmemory && npm i ../react-native-design/bearbytes-react-native-design-0.0.1.tgz && rm ../react-native-design/bearbytes-react-native-design-0.0.1.tgz"
+    "pack": "npm pack && cd ../tripmemory && npm i ../react-native-design/bearbytes-react-native-design-0.0.1.tgz && rm ../react-native-design/bearbytes-react-native-design-0.0.1.tgz",
+    "storybook": "start-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,20 @@
     "react-native": "^0.61.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/preset-create-react-app": "^1.5.0",
+    "@storybook/preset-typescript": "^1.2.0",
+    "@storybook/react": "^5.2.8",
     "@types/react": "^16.9.16",
-    "@types/react-native": "^0.60.25"
-  }
+    "@types/react-native": "^0.60.25",
+    "babel-loader": "^8.0.6",
+    "fork-ts-checker-webpack-plugin": "^4.0.0-beta.4",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "react-native-web": "^0.12.0-rc.1",
+    "react-scripts": "^3.3.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {}
 }
