@@ -8,9 +8,9 @@ export default { title: 'Stack' }
 export function DefaultStack() {
   return (
     <FullScreen>
-      <Stack flex>
-        <Button title="filled" bg="red" />
-        <Button title="outlined" outline="red" />
+      <Stack horizontal>
+        <Button title="filled" mode={'important'} variant={'outline'} />
+        <Button title="outlined" variant={'outline'} />
       </Stack>
     </FullScreen>
   )

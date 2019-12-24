@@ -24,6 +24,13 @@ export function useTheme(): Theme {
     palette: {
       background: 'white',
       text: 'black',
+      accent: 'gold',
+
+      mode: {
+        important: 'blue',
+        success: 'green',
+        danger: 'red',
+      },
     },
   }
 }
