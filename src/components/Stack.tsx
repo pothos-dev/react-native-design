@@ -1,34 +1,39 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { View, ViewStyle } from 'react-native'
-import { Spacing } from '../types'
+import { BoxProps, Spacing } from '../types'
 import { useTheme } from '../useTheme'
 
-export interface StackProps {
+export interface StackProps extends BoxProps {
   horizontal?: boolean
-  center?: boolean
-  spacing?: Spacing
 
-  style?: ViewStyle
-  children: ReactNode[]
+  // Align items centered along the main axis
+  center?: boolean
+
+  // Spacing between items
+  spacing?: Spacing
 }
 
 export function Stack({
   horizontal,
   center,
   spacing = 'default',
+  bg,
+  flex,
   style,
   children,
 }: StackProps) {
   const theme = useTheme()
 
-  let viewStyle: ViewStyle = {}
-
-  if (horizontal) {
-    viewStyle.flexDirection = 'row'
+  if (typeof flex == 'boolean') {
+    flex = flex ? 1 : undefined
   }
 
-  if (center) {
-    viewStyle.alignItems = 'center'
+  let viewStyle: ViewStyle = {
+    display: 'flex',
+    flex,
+    backgroundColor: bg,
+    alignItems: center ? 'center' : 'stretch',
+    flexDirection: horizontal ? 'row' : 'column',
   }
 
   const margin = theme.spacing[spacing]

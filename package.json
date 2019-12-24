@@ -7,7 +7,8 @@
     "src"
   ],
   "scripts": {
-    "local": "npm pack && cd ../tripmemory && npm i ../react-native-design/bearbytes-react-native-design-0.0.1.tgz && rm ../react-native-design/bearbytes-react-native-design-0.0.1.tgz"
+    "copy": "cp -r src/* ../tripmemory/node_modules/@bearbytes/react-native-design/src",
+    "pack": "npm pack && cd ../tripmemory && npm i ../react-native-design/bearbytes-react-native-design-0.0.1.tgz && rm ../react-native-design/bearbytes-react-native-design-0.0.1.tgz"
   },
   "author": "",
   "license": "ISC",
