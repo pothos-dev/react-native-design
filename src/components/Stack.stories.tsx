@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from './Box'
+import { Button } from './Button'
 import { FullScreen } from './FullScreen'
 import { Stack } from './Stack'
 
@@ -18,5 +18,5 @@ export function DefaultStack() {
 }
 
 function Placeholder() {
-  return <Box bg="red" flex style={{ minHeight: 80 }} />
+  return <Button title="Button" bg="red" />
 }

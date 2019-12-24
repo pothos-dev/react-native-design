@@ -1,30 +1,41 @@
 import React, { ReactNode } from 'react'
 import { StyleProp, View, ViewStyle } from 'react-native'
+import { BorderRadius, Theme } from '../types'
+import { useTheme } from '../useTheme'
 
 export interface BoxProps {
   bg?: string
   flex?: number | boolean
+  borderRadius?: BorderRadius
+
   style?: ViewStyle
   children?: ReactNode[]
 }
 
 export function Box(props: BoxProps) {
-  return <View style={boxPropsToStyle(props)}>{props.children}</View>
+  const theme = useTheme()
+  const boxStyle = boxPropsToStyle(props, theme)
+  return <View style={boxStyle}>{props.children}</View>
 }
 
-export function boxPropsToStyle(props: BoxProps): StyleProp<ViewStyle> {
+export function boxPropsToStyle(
+  props: BoxProps,
+  theme: Theme
+): StyleProp<ViewStyle> {
   let flex = props.flex
   if (typeof flex == 'boolean') {
     flex = flex ? 1 : undefined
   }
 
-  let backgroundColor = props.bg
+  const backgroundColor = props.bg
+  const borderRadius = theme.borderRadius[props.borderRadius ?? 'default']
 
   return [
     props.style,
     {
       flex,
       backgroundColor,
+      borderRadius,
     },
   ]
 }

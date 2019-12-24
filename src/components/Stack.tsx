@@ -20,7 +20,7 @@ export function Stack(props: StackProps) {
   const theme = useTheme()
   const { horizontal, center, spacing = 'default', children } = props
 
-  const boxStyle = boxPropsToStyle(props)
+  const boxStyle = boxPropsToStyle(props, theme)
   const stackStyle: ViewStyle = {
     flexDirection: horizontal ? 'row' : 'column',
     alignItems: center ? 'center' : 'stretch',
