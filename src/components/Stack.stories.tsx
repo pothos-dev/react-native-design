@@ -1,6 +1,22 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { Box } from './Box'
+import { FullScreen } from './FullScreen'
+import { Stack } from './Stack'
 
-export default { title: 'Button' }
+export default { title: 'Stack' }
 
-export const withText = () => <Button title="Hello" onPress={() => {}} />
+export function DefaultStack() {
+  return (
+    <FullScreen>
+      <Stack flex>
+        <Placeholder />
+        <Placeholder />
+        <Placeholder />
+      </Stack>
+    </FullScreen>
+  )
+}
+
+function Placeholder() {
+  return <Box bg="red" flex style={{ minHeight: 80 }} />
+}

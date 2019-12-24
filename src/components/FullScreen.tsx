@@ -10,30 +10,38 @@ import { Spacing } from '../types'
 import { useTheme } from '../useTheme'
 
 export interface FullScreenProps {
-  borderSpacing?: Spacing
+  bg?: string
+  padding?: Spacing
 
   children: ReactNode
   style?: ViewStyle
 }
 
 export function FullScreen({
+  bg,
   children,
   style,
-  borderSpacing = 'default',
+  padding: paddingProp = 'default',
 }: FullScreenProps) {
   const theme = useTheme()
 
-  const padding = theme.spacing[borderSpacing]
-  const viewStyle: ViewStyle = {
-    flex: 1,
+  const padding = theme.spacing[paddingProp]
+  const fullscreenStyle: ViewStyle = {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: StatusBar.currentHeight ?? 0,
+    bottom: 0,
     padding,
-    paddingTop: padding + (StatusBar.currentHeight ?? 0),
+    backgroundColor: bg,
   }
 
   switch (Platform.OS) {
     case 'ios':
-      return <SafeAreaView style={[viewStyle, style]}>{children}</SafeAreaView>
+      return (
+        <SafeAreaView style={[fullscreenStyle, style]}>{children}</SafeAreaView>
+      )
     default:
-      return <View style={[viewStyle, style]}>{children}</View>
+      return <View style={[fullscreenStyle, style]}>{children}</View>
   }
 }
