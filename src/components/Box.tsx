@@ -7,6 +7,7 @@ export interface BoxProps {
   bg?: string
   flex?: number | boolean
   borderRadius?: BorderRadius
+  outline?: string
 
   style?: ViewStyle
   children?: ReactNode[]
@@ -29,6 +30,8 @@ export function boxPropsToStyle(
 
   const backgroundColor = props.bg
   const borderRadius = theme.borderRadius[props.borderRadius ?? 'default']
+  const borderWidth = props.outline ? theme.outlineWidth : 0
+  const borderColor = props.outline
 
   return [
     props.style,
@@ -36,6 +39,8 @@ export function boxPropsToStyle(
       flex,
       backgroundColor,
       borderRadius,
+      borderWidth,
+      borderColor,
     },
   ]
 }

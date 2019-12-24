@@ -9,14 +9,9 @@ export function DefaultStack() {
   return (
     <FullScreen>
       <Stack flex>
-        <Placeholder />
-        <Placeholder />
-        <Placeholder />
+        <Button title="filled" bg="red" />
+        <Button title="outlined" outline="red" />
       </Stack>
     </FullScreen>
   )
-}
-
-function Placeholder() {
-  return <Button title="Button" bg="red" />
 }

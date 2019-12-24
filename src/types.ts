@@ -4,6 +4,7 @@ export type BorderRadius = 'default' | 'none' | 'small' | 'medium' | 'large'
 export type Theme = {
   spacing: Record<Spacing, number>
   borderRadius: Record<BorderRadius, number>
+  outlineWidth: number
   palette: Palette
 }
 

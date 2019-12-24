@@ -11,6 +11,8 @@ export function useTheme(): Theme {
       large: 20,
     },
 
+    outlineWidth: 1,
+
     borderRadius: {
       default: 5,
       none: 0,

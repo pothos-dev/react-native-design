@@ -23,7 +23,7 @@ export function Button(props: ButtonProps) {
   }
 
   const textStyle: TextStyle = {
-    color: 'white',
+    color: theme.palette.text,
   }
 
   return (
