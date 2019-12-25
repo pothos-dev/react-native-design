@@ -10,7 +10,7 @@ export interface BoxProps {
   outline?: string
 
   style?: ViewStyle
-  children?: ReactNode[]
+  children?: ReactNode[] | ReactNode
 }
 
 export function Box(props: BoxProps) {
@@ -34,7 +34,6 @@ export function boxPropsToStyle(
   const borderColor = props.outline
 
   return [
-    props.style,
     {
       flex,
       backgroundColor,
@@ -42,5 +41,6 @@ export function boxPropsToStyle(
       borderWidth,
       borderColor,
     },
+    props.style,
   ]
 }

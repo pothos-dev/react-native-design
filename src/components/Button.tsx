@@ -17,7 +17,7 @@ export function Button(props: ButtonProps) {
   const theme = useTheme()
   const boxStyle = boxPropsToStyle(props, theme)
 
-  const { title, padding = 'default', mode: mode, variant = 'default' } = props
+  const { title, padding = 'default', mode, variant = 'default' } = props
 
   const buttonStyle: ViewStyle = {
     justifyContent: 'center',

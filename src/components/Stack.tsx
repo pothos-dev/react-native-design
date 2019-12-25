@@ -13,7 +13,7 @@ export interface StackProps extends BoxProps {
   // Spacing between items
   spacing?: Spacing
 
-  children: ReactNode[]
+  children: ReactNode[] | ReactNode
 }
 
 export function Stack(props: StackProps) {
@@ -32,12 +32,13 @@ export function Stack(props: StackProps) {
     width: horizontal ? margin : '100%',
   }
 
+  const childrenArr = Array.isArray(children) ? children : [children]
   const childrenWithGaps: ReactNode[] = []
-  for (let i = 0; i < children.length; i++) {
+  for (let i = 0; i < childrenArr.length; i++) {
     if (i > 0) {
       childrenWithGaps.push(<View key={'__stack_gap_' + i} style={gapStyle} />)
     }
-    childrenWithGaps.push(children[i])
+    childrenWithGaps.push(childrenArr[i])
   }
 
   return <View style={[boxStyle, stackStyle]}>{childrenWithGaps}</View>
