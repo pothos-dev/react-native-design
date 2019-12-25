@@ -2,7 +2,6 @@ import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import { Spacing } from '../types'
 import { Box } from './Box'
-import { FullScreen } from './FullScreen'
 import { Stack } from './Stack'
 
 export default {
@@ -12,8 +11,8 @@ export default {
 
 export function Default() {
   const horizontal = boolean('horizontal', false)
-  const flex = boolean('flex', true)
-  const outline = boolean('outline', true) ? 'black' : undefined
+  const flex = boolean('flex', false)
+  const outline = boolean('outline', false) ? 'black' : undefined
 
   const spacing = radios<Spacing>(
     'spacing',
@@ -28,12 +27,10 @@ export function Default() {
   )
 
   return (
-    <FullScreen>
-      <Stack {...{ horizontal, flex, spacing, outline }}>
-        <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="red" />
-        <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="green" />
-        <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="blue" />
-      </Stack>
-    </FullScreen>
+    <Stack {...{ horizontal, flex, spacing, outline }}>
+      <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="red" />
+      <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="green" />
+      <Box flex style={{ minHeight: 80, minWidth: 80 }} bg="blue" />
+    </Stack>
   )
 }
